@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العقيق اليماني - جوهرة اليمن الأصيلة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B0000; /* لون العقيق الأحمر العميق */
+            --secondary: #D4AF37; /* لون ذهبي فاخر */
+            --dark: #1A1A1A; /* خلفية داكنة */
+            --light: #F8F4E9; /* خلفية فاتحة */
+            --text: #333333;
+            --accent: #5D4037; /* لون بني ترابي */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* التصميم العام */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding: 0 20px;
+            background: var(--light);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+            z-index: 0;
+        }
+        
+        /* الشريط العلوي */
+        header {
+            background-color: var(--dark);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-left: 15px;
+        }
+        
+        .logo h1 {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* القسم الرئيسي */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1543857778-c4a1a569e7bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1410&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--light);
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+        
+        /* قسم من نحن */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* قسم المنتجات */
+        .products {
+            background-color: var(--dark);
+            color: var(--light);
+        }
+        
+        .products .section-title h2 {
+            background: var(--dark);
+            color: var(--secondary);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .product-info p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 15px;
+        }
+        
+        /* قسم الخبرة */
+        .expertise {
+            background-color: var(--light);
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .expertise-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .expertise-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .expertise-card p {
+            margin-bottom: 15px;
+        }
+        
+        /* قسم الشهادات */
+        .testimonials {
+            background: linear-gradient(to bottom, var(--dark), var(--accent));
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        
+        .testimonial {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .client-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-left: 15px;
+            border: 2px solid var(--secondary);
+        }
+        
+        .client-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .client-details h4 {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+        
+        /* التذييل */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary);
+            padding-right: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNENEFGMzciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCI+PC9jaXJjbGU+PHBhdGggZD0iTTEyIDE2di0zLjUiPjwvcGF0aD48cGF0aCBkPSJNMTIgOC4wMXYuMDEiPjwvcGF0aD48L3N2Zz4=" alt="شعار العقيق اليماني">
+                <h1>العقيق <span>اليماني</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#products">المنتجات</a></li>
+                    <li><a href="#expertise">خبرتنا</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>جوهرة اليمن الأصيلة: العقيق اليماني</h1>
+            <p>اكتشف جمال وروحانية الحجر الذي أسر القلوب لقرون. مصدر أصلي من قلب اليمن.</p>
+            <a href="#products" class="btn">تصفح المجموعة</a>
+            <a href="#about" class="btn btn-secondary">تعرف علينا</a>
+        </div>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>عن العقيق اليماني</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>تراث يتوارث عبر الأجيال</h3>
+                    <p>العقيق اليماني هو أحد أندر وأجمل الأحجار الكريمة في العالم، ويتميز بألوانه المتنوعة وعلاماته الفريدة. يعود تاريخ استخراجه وتشكيله في اليمن إلى آلاف السنين، حيث اشتهر اليمنيون القدماء بصناعة الخواتم والأختام والمجوهرات من هذا الحجر الثمين.</p>
+                    <p>نحن في "العقيق اليماني" نحرص على تقديم أجود أنواع العقيق اليماني الأصلي، المستخرج من مناجم اليمن العريقة. كل قطعة نقدمها هي تحفة فنية تعكس إرثاً ثقافياً وحضارياً عريقاً.</p>
+                    <p>نلتزم بمعايير الجودة العالية في اختيار الأحجار وتشكيلها، مع الحفاظ على الأصالة والهوية اليمانية التي تميز منتجاتنا. فريقنا من الحرفيين المهرة يجمع بين التقاليد القديمة والتقنيات الحديثة لتقديم تحف فنية تستحق الإرث.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="العقيق اليماني الأصلي">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>مجموعتنا الفاخرة</h2>
+            </div>
+            <div class="products-grid">
+                <!-- المنتج 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1588449668365-d15e397f6787?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="خاتم العقيق الأحمر">
+                    </div>
+                    <div class="product-info">
+                        <h3>خاتم العقيق الأحمر</h3>
+                        <p>خاتم فاخر من العقيق اليماني الأحمر مع تصميم تقليدي أنيق</p>
+                        <span class="price">1,250 ريال</span>
+                        <a href="#" class="btn">إضافة للسلة</a>
+                    </div>
+                </div>
+                
+                <!-- المنتج 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="عقد العقيق الأصفر">
+                    </div>
+                    <div class="product-info">
+                        <h3>عقد العقيق الأصفر</h3>
+                        <p>عقد مميز من العقيق اليماني الأصفر مع زخارف فضية تقليدية</p>
+                        <span class="price">2,800 ريال</span>
+                        <a href="#" class="btn">إضافة للسلة</a>
+                    </div>
+                </div>
+                
+                <!-- المنتج 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1610397643858-c8241f86d0ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="سوار العقيق الأخضر">
+                    </div>
+                    <div class="product-info">
+                        <h3>سوار العقيق الأخضر</h3>
+                        <p>سوار أنيق من العقيق اليماني الأخضر مع تفاصيل ذهبية</p>
+                        <span class="price">1,950 ريال</span>
+                        <a href="#" class="btn">إضافة للسلة</a>
+                    </div>
+                </div>
+                
+                <!-- المنتج 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="حجر العقيق الطبيعي">
+                    </div>
+                    <div class="product-info">
+                        <h3>حجر العقيق الطبيعي</h3>
+                        <p>حجر عقيق يماني طبيعي عالي الجودة للجمع أو التصميم</p>
+                        <span class="price">850 ريال</span>
+                        <a href="#" class="btn">إضافة للسلة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الخبرة -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-title">
+                <h2>خبرتنا في التجارة الإلكترونية</h2>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>أمن وتشفير متقدم</h3>
+                    <p>نوفر أعلى معايير الأمان لمعاملاتك عبر استخدام أحدث تقنيات التشفير وحماية البيانات. جميع المعاملات المالية تتم عبر بوابات دفع آمنة ومعتمدة عالمياً.</p>
+                    <p>نظامنا يحقق معايير PCI DSS لأمان بطاقات الائتمان، مع مراقبة مستمرة لمنع أي محاولات اختراق.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>تجربة مستخدم متميزة</h3>
+                    <p>صممنا متجرنا الإلكتروني ليكون سهل الاستخدام على جميع الأجهزة، مع واجهة بديهية تتيح لك تصفح المنتجات وإتمام الشراء في خطوات بسيطة.</p>
+                    <p>نستخدم تقنيات حديثة مثل PWA لتحميل فائق السرعة وتجربة شبيهة بالتطبيق على الهواتف الذكية.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>ذكاء اصطناعي وتخصيص</h3>
+                    <p>نظامنا يستخدم الذكاء الاصطناعي لتقديم توصيات شخصية بناءً على اهتماماتك وتصفحك السابق، مما يسهل عليك اكتشاف القطع التي تناسب ذوقك.</p>
+                    <p>كما نقدم خدمة محادثة ذكية للرد على استفساراتك على مدار الساعة.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>سلسلة توريد ذكية</h3>
+                    <p>نظام إدارة متكامل يربط بين المخزون والشحن والمبيعات، يضمن تحديث المخزون فورياً وتقديم أوقات شحن دقيقة.</p>
+                    <p>شركاؤنا في الشحن يوفرون تتبعاً لحظياً للشحنات مع تغطية شاملة للمناطق.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>تحليلات بيانات متقدمة</h3>
+                    <p>نستخدم أدوات التحليل المتقدمة لفهم سلوك العملاء وتحسين تجربة التسوق بشكل مستمر.</p>
+                    <p>نظامنا يتنبأ بالاتجاهات ويدير المخزون بشكل استباقي لضمان توفر المنتجات المطلوبة دائماً.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>دعم فني متكامل</h3>
+                    <p>فريق الدعم الفني لدينا يعمل على مدار الساعة لمساعدتك في أي استفسار أو مشكلة تقنية.</p>
+                    <p>نوفر قنوات دعم متعددة: محادثة مباشرة، هاتف، بريد إلكتروني، وتذاكر دعم مع نظام متابعة متكامل.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الشهادات -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>آراء عملائنا</h2>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <p>"اشتريت خاتم عقيق يماني من المتجر وكانت تجربة رائعة. الجودة فائقة والتوصيل كان أسرع مما توقعت. شكراً لفريق الدعم الرائع الذي ساعدني في اختيار القياس المناسب."</p>
+                    <div class="client-info">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="عمر السديري">
+                        </div>
+                        <div class="client-details">
+                            <h4>عمر السديري</h4>
+                            <p>الرياض</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"كمهتمة بالمجوهرات التقليدية، أجد أن العقيق اليماني يتميز بجودة لا مثيل لها. الموقع سهل الاستخدام وطريقة الدفع آمنة. سأكون عميلة دائمة بلا شك!"</p>
+                    <div class="client-info">
+                        <div class="client-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="نورة الفهد">
+                        </div>
+                        <div class="client-details">
+                            <h4>نورة الفهد</h4>
+                            <p>جدة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>العقيق اليماني</h3>
+                    <p>جوهرة اليمن الأصيلة التي أسرت القلوب لقرون. نقدم لكم أجود أنواع العقيق اليماني الأصلي مع الحفاظ على التراث والجودة.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#products">المجموعة</a></li>
+                        <li><a href="#expertise">خبرتنا</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>خدماتنا</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الشحن والتوصيل</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">دليل الأحجام</a></li>
+                        <li><a href="#">رعاية المجوهرات</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>اتصل بنا</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> شارع المتحف، صنعاء، اليمن</p>
+                    <p><i class="fas fa-phone"></i> 00967 1 123456</p>
+                    <p><i class="fas fa-envelope"></i> info@yemeni-agate.com</p>
+                    <p><i class="fas fa-clock"></i> الأحد - الخميس: 9 صباحاً - 5 مساءً</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 العقيق اليماني. جميع الحقوق محفوظة. تم التطوير باستخدام أحدث تقنيات التجارة الإلكترونية</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // كود جافاسكريبت بسيط للتنقل السلس
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // إضافة تأثير التمرير للشريط العلوي
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
